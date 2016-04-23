@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Phones</h1>
+    </div>
+</div>
+
+<div class="row" style="margin-bottom: 20px">
+    <div class="col-lg-3">
+        <search-box></search-box>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3 text-center" ng-repeat="phone in phones | filter:searchText">
+        <ng-include src="'js/phone/phone-list-item.tpl.html'"></ng-include>
+    </div>
+</div>
+
+<copyright></copyright>
