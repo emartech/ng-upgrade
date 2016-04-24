@@ -2,10 +2,10 @@
     <a ng-href="#/file/{{ phone.id }}">
         <img class="img-responsive" ng-src="{{ phone.imageUrl }}" alt="">
     </a>
-    <div class="caption" style="height: 200px">
+    <div class="caption" style="height: 180px">
         <a ng-href="#/file/{{ phone.id }}">
             <h3>{{ phone.name }}</h3>
         </a>
-        <p>{{ phone.snippet }}</p>
+        <p>{{ phone.snippet | shortDescription }}</p>
     </div>
 </div>
