@@ -2,16 +2,17 @@
 
 const PhoneRepositoryService = require('./services/phone-repository/phone-repository.service');
 const CarrierRepositoryService = require('./services/carrier-repository/carrier-repository.service');
+const FilteredPhoneListService = require('./services/filtered-phone-list/filtered-phone-list.service');
 
 const ShortDescriptionFilter = require('./filters/short-description/short-description.filter');
 
+const PhoneAppComponent = require('./components/phone-app/phone-app.component');
+const PhoneListAppComponent = require('./components/phone-list-app/phone-list-app.component');
 const BootstrapSelectComponent = require('./components/bootstrap-select/bootstrap-select.component');
 const CarrierSelectComponent = require('./components/carrier-select/carrier-select.component');
 const SearchComponent = require('./components/search/search.component');
 const PhoneListItemComponent = require('./components/phone-list-item/phone-list-item.component');
 const CopyrightComponent = require('./components/copyright/copyright.component');
-const PhoneAppComponent = require('./components/phone-app/phone-app.component');
-const PhoneListAppComponent = require('./components/phone-list-app/phone-list-app.component');
 
 angular
   .module('phoneApp', [
@@ -20,6 +21,7 @@ angular
 
   .service('phoneRepository', PhoneRepositoryService.create())
   .service('carrierRepository', CarrierRepositoryService.create())
+  .service('filteredPhoneList', FilteredPhoneListService.create())
 
   .component('phoneApp', PhoneAppComponent.create())
   .component('phoneListApp', PhoneListAppComponent.create())
