@@ -38,6 +38,11 @@ class PhoneListApp {
   }
 
 
+  hasVisiblePhones() {
+    return this.phones.length > 0;
+  }
+
+
   static create() {
     return {
       controller: ['$filter', 'phoneRepository', PhoneListApp],
