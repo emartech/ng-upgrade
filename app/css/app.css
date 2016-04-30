@@ -18,3 +18,8 @@ a[ng-click]{
     font-weight: bold;
     font-size: 1.6em;
 }
+
+.thumbnail-image {
+    display: inline-block;
+    padding: 15px;
+}
