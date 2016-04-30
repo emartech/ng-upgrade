@@ -6,6 +6,7 @@ const BootstrapSelectComponent = require('./components/bootstrap-select/bootstra
 const CarrierSelectComponent = require('./components/carrier-select/carrier-select.component');
 const SearchComponent = require('./components/search/search.component');
 const PhoneListItemComponent = require('./components/phone-list-item/phone-list-item.component');
+const ShortDescriptionFilter = require('./filters/short-description/short-description.filter');
 
 
 angular
@@ -18,6 +19,7 @@ angular
   .component('carrierSelect', CarrierSelectComponent.create())
   .component('search', SearchComponent.create())
   .component('phoneListItem', PhoneListItemComponent.create())
+  .filter('shortDescription', ShortDescriptionFilter.create())
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
@@ -36,6 +38,5 @@ angular
 require('./phone/phone-list.ctrl.js');
 require('./phone/phone.ctrl.js');
 require('./copyright.directive.js');
-require('./short-description.filter.js');
 
 
