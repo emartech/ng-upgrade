@@ -2,6 +2,8 @@
 
 const PhoneRepository = require('./services/phone-repository.service');
 const CarrierRepository = require('./services/carrier-repository.service');
+const BootstrapSelectComponent = require('./components/bootstrap-select/bootstrap-select.component');
+const CarrierSelectComponent = require('./components/carrier-select/carrier-select.component');
 
 
 angular
@@ -10,6 +12,8 @@ angular
   ])
   .service('phoneRepository', PhoneRepository.create())
   .service('carrierRepository', CarrierRepository.create())
+  .component('bootstrapSelect', BootstrapSelectComponent.create())
+  .component('carrierSelect', CarrierSelectComponent.create())
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
@@ -27,7 +31,6 @@ angular
 
 require('./phone/phone-list.ctrl.js');
 require('./phone/phone.ctrl.js');
-require('./carrier-select.directive.js');
 require('./search-box.directive.js');
 require('./copyright.directive.js');
 require('./short-description.filter.js');
