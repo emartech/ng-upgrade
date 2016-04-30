@@ -1,24 +1,26 @@
 'use strict';
 
-const PhoneRepository = require('./services/phone-repository.service');
-const CarrierRepository = require('./services/carrier-repository.service');
+const PhoneRepositoryService = require('./services/phone-repository.service');
+const CarrierRepositoryService = require('./services/carrier-repository.service');
 const BootstrapSelectComponent = require('./components/bootstrap-select/bootstrap-select.component');
 const CarrierSelectComponent = require('./components/carrier-select/carrier-select.component');
 const SearchComponent = require('./components/search/search.component');
 const PhoneListItemComponent = require('./components/phone-list-item/phone-list-item.component');
 const ShortDescriptionFilter = require('./filters/short-description/short-description.filter');
+const CopyrightComponent = require('./components/copyright/copyright.component');
 
 
 angular
   .module('phoneApp', [
     'ngRoute'
   ])
-  .service('phoneRepository', PhoneRepository.create())
-  .service('carrierRepository', CarrierRepository.create())
+  .service('phoneRepository', PhoneRepositoryService.create())
+  .service('carrierRepository', CarrierRepositoryService.create())
   .component('bootstrapSelect', BootstrapSelectComponent.create())
   .component('carrierSelect', CarrierSelectComponent.create())
   .component('search', SearchComponent.create())
   .component('phoneListItem', PhoneListItemComponent.create())
+  .component('copyright', CopyrightComponent.create())
   .filter('shortDescription', ShortDescriptionFilter.create())
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -37,6 +39,5 @@ angular
 
 require('./phone/phone-list.ctrl.js');
 require('./phone/phone.ctrl.js');
-require('./copyright.directive.js');
 
 
