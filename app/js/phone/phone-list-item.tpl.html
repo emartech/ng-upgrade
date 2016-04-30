@@ -1,10 +1,9 @@
 <div class="thumbnail">
-    <a ng-href="#/file/{{ phone.id }}">
+    <a ng-href="#/phone/{{ phone.id }}">
         <img class="img-responsive" ng-src="{{ phone.imageUrl }}" alt="">
     </a>
     <div class="caption" style="height: 180px">
-        <a ng-href="#/file/{{ phone.id }}">
-            <h3>{{ phone.name }}</h3>
+        <a ng-href="#/phone/{{ phone.id }}">
         </a>
         <p>{{ phone.snippet | shortDescription }}</p>
     </div>
