@@ -3,7 +3,7 @@
 angular
   .module('phoneApp')
   .controller('PhoneListController', ['$scope', '$http', '$rootScope', '$filter', 'phoneRepository', function($scope, $http, $rootScope, $filter, phoneRepository) {
-    $scope.searchText = '';
+
     $scope.selectedCarrier = '';
     $scope.allPhones = [];
     $scope.phones = [];
@@ -16,9 +16,14 @@ angular
       $scope.selectedCarrier = carrier;
     };
 
+    $scope.search = function(value) {
+      $scope.searchText = value;
+    };
+
     $scope.$watch('searchText', function() {
       $scope.phones = getFilteredPhones();
     });
+
     $scope.$watch('selectedCarrier', function() {
       $scope.phones = getFilteredPhones();
     });
