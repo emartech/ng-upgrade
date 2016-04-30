@@ -6,12 +6,29 @@
 
 <div class="row" style="margin-bottom: 20px">
     <div class="col-lg-3">
-        <search-box></search-box>
+        <div class="btn-group" role="group">
+            <search-box></search-box>
+
+
+            <div class="btn-group" ng-class="{ open: isCarrierSelectorOpened }">
+                <button type="button" class="btn btn-default dropdown-toggle" ng-click="isCarrierSelectorOpened = !isCarrierSelectorOpened">
+                    {{ selectedCarrier ? selectedCarrier : 'All carrier' }} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a ng-click="selectCarrier($event)">Select all</a></li>
+                    <li ng-repeat="carrier in carriers">
+                        <a ng-click="selectCarrier($event, carrier)">
+                            {{ carrier }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
 
 <div class="row">
-    <div class="col-md-3 text-center" ng-repeat="phone in phones | filter:searchText">
+    <div class="col-md-3 text-center" ng-repeat="phone in phones | filter:{name: searchText, carrier: selectedCarrier}">
         <ng-include src="'js/phone/phone-list-item.tpl.html'"></ng-include>
     </div>
 </div>
