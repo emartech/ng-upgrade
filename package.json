@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -a 0.0.0.0 -p 8000",
-    "bundle": "webpack app/js/index.js app/js/index.bundle.js --config webpack.config.js --watch -d"
+    "bundle": "webpack app/js/index.js app/dist/index.bundle.js --config webpack.config.js --watch -d"
   },
   "repository": {
     "type": "git",
