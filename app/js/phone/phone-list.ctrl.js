@@ -2,10 +2,14 @@
 
 angular
   .module('phoneApp')
-  .controller('PhoneListController', ['phones', '$scope', function(phones, $scope) {
+  .controller('PhoneListController', ['$scope', '$http', function($scope, $http) {
     $scope.searchText = '';
 
-    phones.getAll().then(function(phoneList) {
-      $scope.phones = phoneList;
-    });
+    $http.get('phones/phones.json')
+      .then(function (response) {
+        return response.data;
+      })
+      .then(function(phoneList) {
+        $scope.phones = phoneList;
+      });
   }]);

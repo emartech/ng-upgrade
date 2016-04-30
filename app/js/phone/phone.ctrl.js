@@ -2,8 +2,12 @@
 
 angular
   .module('phoneApp')
-  .controller('PhoneController', ['phones', '$routeParams', '$scope', function(phones, $routeParams, $scope) {
-    phones.get($routeParams.fileId).then(function(phone) {
-      $scope.phone = phone;
-    });
+  .controller('PhoneController', ['$http', '$routeParams', '$scope', function($http, $routeParams, $scope) {
+    $http.get('phones/' + $routeParams.fileId + '.json')
+      .then(function (response) {
+        return response.data;
+      })
+      .then(function(phone) {
+        $scope.phone = phone;
+      });
   }]);
