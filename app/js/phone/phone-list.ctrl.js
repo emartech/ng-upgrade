@@ -2,7 +2,7 @@
 
 angular
   .module('phoneApp')
-  .controller('PhoneListController', ['$scope', '$http', '$rootScope', '$filter', function($scope, $http, $rootScope, $filter) {
+  .controller('PhoneListController', ['$scope', '$http', '$rootScope', '$filter', 'phoneRepository', function($scope, $http, $rootScope, $filter, phoneRepository) {
     $scope.searchText = '';
     $scope.selectedCarrier = '';
     $scope.allPhones = [];
@@ -23,9 +23,9 @@ angular
       $scope.phones = getFilteredPhones();
     });
 
-    $http.get('/api/phones.json')
-      .then(function (response) {
-        $scope.phones = $scope.allPhones = response.data;
-      });
+    phoneRepository
+      .getAll()
+      .then((phones) => $scope.phones = $scope.allPhones = phones);
+    
   }]);
 
