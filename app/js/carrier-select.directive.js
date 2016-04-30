@@ -25,7 +25,7 @@ angular
             $rootScope.$broadcast('carrier-selected', carrier);
           });
         }],
-        templateUrl: 'js/phone/carrier-select.tpl.html'
+        templateUrl: 'js/carrier-select.tpl.html'
       };
     }
   ]);

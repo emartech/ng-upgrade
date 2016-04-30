@@ -3,7 +3,7 @@
         {{ selectedCarrier ? selectedCarrier : 'All carrier' }} <span class="caret"></span>
     </button>
     <ul class="dropdown-menu">
-        <li><a ng-click="selectCarrier($event)">Select all</a></li>
+        <li><a ng-click="selectCarrier()">Select all</a></li>
         <li ng-repeat="carrier in carriers">
             <a ng-click="selectCarrier(carrier)">
                 {{ carrier }}
