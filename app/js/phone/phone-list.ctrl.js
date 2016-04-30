@@ -4,6 +4,8 @@ angular
   .module('phoneApp')
   .controller('PhoneListController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
     $scope.searchText = '';
+    $scope.selectedCarrier = '';
+    $scope.phones = [];
 
     $rootScope.$on('carrier-selected', function($event, carrier) {
       $scope.selectedCarrier = carrier;
