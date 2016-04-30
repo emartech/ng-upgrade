@@ -1,6 +1,7 @@
 'use strict';
 
 const PhoneRepository = require('./services/phone-repository.service');
+const CarrierRepository = require('./services/carrier-repository.service');
 
 
 angular
@@ -8,6 +9,7 @@ angular
     'ngRoute'
   ])
   .service('phoneRepository', PhoneRepository.create())
+  .service('carrierRepository', CarrierRepository.create())
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
