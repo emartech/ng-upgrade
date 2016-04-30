@@ -16,6 +16,7 @@
     <div class="col-md-3 text-center" ng-repeat="phone in phones | filter:{name: searchText, carrier: selectedCarrier}">
         <ng-include src="'js/phone/phone-list-item.tpl.html'"></ng-include>
     </div>
+    <div ng-if="(phones | filter:{name: searchText, carrier: selectedCarrier}).length === 0" class="alert alert-warning" role="alert"><strong>Oh god!</strong> There is no phone to show :(</div>
 </div>
 
 <copyright></copyright>
