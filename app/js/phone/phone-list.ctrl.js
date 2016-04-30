@@ -13,7 +13,6 @@ angular
     });
 
     function getFilteredPhones() {
-      console.log('run')
       return $filter('filter')($scope.allPhones, { name: $scope.searchText, carrier: $scope.selectedCarrier });
     }
 
