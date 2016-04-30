@@ -9,7 +9,7 @@ angular
       $scope.selectedCarrier = carrier;
     });
 
-    $http.get('phones/phones.json')
+    $http.get('/api/phones.json')
       .then(function (response) {
         $scope.phones = response.data;
       });

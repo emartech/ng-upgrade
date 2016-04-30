@@ -5,15 +5,12 @@ angular
   .directive('carrierSelect', [
     function() {
       return {
-        controller: ['$scope', '$rootScope', function($scope, $rootScope) {
-          $scope.carriers = [
-            'AT&T',
-            'Cellular South',
-            'Verizon',
-            'T-Mobile',
-            'Best Buy',
-            'Dell'
-          ];
+        controller: ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
+          $http.get('/api/carriers.json')
+            .then(function (response) {
+              $scope.carriers = response.data;
+            });
+
           $scope.isCarrierSelectorOpened = false;
 
           $scope.selectCarrier = function(carrier) {
