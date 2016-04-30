@@ -14,5 +14,7 @@ angular
         templateUrl: 'js/phone/phone.tpl.html',
         controller: 'PhoneController'
       })
-      .otherwise({redirectTo: '/'});
+      .otherwise({
+        redirectTo: '/'
+      });
   }]);
