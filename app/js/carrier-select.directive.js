@@ -14,13 +14,9 @@ angular
           $scope.isCarrierSelectorOpened = false;
 
           $scope.selectCarrier = function(carrier) {
-            $scope.carrier = carrier;
+            $rootScope.$broadcast('carrier-selected', carrier);
             $scope.isCarrierSelectorOpened = false;
           };
-
-          $scope.$watch('carrier', function(carrier) {
-            $rootScope.$broadcast('carrier-selected', carrier);
-          });
         }],
         templateUrl: 'js/carrier-select.tpl.html'
       };
