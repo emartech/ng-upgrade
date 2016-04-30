@@ -1,15 +1,15 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">{{ phone.name }}</h1>
+        <h1 class="page-header">{{ $ctrl.phone.name }}</h1>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-6">
-        <img class="img-responsive" ng-src="{{ phone.images[0] }}" alt="">
+        <img class="img-responsive" ng-src="{{ $ctrl.phone.images[0] }}" alt="">
     </div>
     <div class="col-md-6">
-        <p>{{ phone.description }}</p>
+        <p>{{ $ctrl.phone.description }}</p>
     </div>
 </div>
 
@@ -18,7 +18,7 @@
         <h3 class="page-header">Additional images</h3>
     </div>
 
-    <div class="col-sm-3 col-xs-6" ng-repeat="image in phone.images">
+    <div class="col-sm-3 col-xs-6" ng-repeat="image in $ctrl.phone.images">
         <img class="img-responsive img-related" ng-src="{{ image }}" alt="">
     </div>
 </div>
