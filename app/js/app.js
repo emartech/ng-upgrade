@@ -7,11 +7,11 @@ angular
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'js/phone/phone-list.tpl.html',
+        templateUrl: 'js/phone-list.tpl.html',
         controller: 'PhoneListController'
       })
       .when('/phone/:fileId', {
-        templateUrl: 'js/phone/phone.tpl.html',
+        templateUrl: 'js/phone.tpl.html',
         controller: 'PhoneController'
       })
       .otherwise({

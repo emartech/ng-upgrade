@@ -3,6 +3,8 @@
 angular
   .module('phoneApp')
   .controller('PhoneListController', ['$scope', '$http', '$rootScope', '$filter', function($scope, $http, $rootScope, $filter) {
+    $rootScope.actualYear = 2016;
+
     $scope.searchText = '';
     $scope.selectedCarrier = '';
     $scope.allPhones = [];
