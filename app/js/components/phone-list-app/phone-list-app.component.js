@@ -5,12 +5,6 @@ class PhoneListApp {
 
   constructor(filteredPhoneList) {
     this.filteredPhoneList = filteredPhoneList;
-
-    this.phones = [];
-    filteredPhoneList.phones$.subscribe((phones) => this.phones = phones);
-
-    this.hasAnyPhones = 0;
-    filteredPhoneList.hasAny$.subscribe((hasAny) => this.hasAnyPhones = hasAny);
   }
 
 

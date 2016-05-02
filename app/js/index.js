@@ -14,9 +14,11 @@ const SearchComponent = require('./components/search/search.component');
 const PhoneListItemComponent = require('./components/phone-list-item/phone-list-item.component');
 const CopyrightComponent = require('./components/copyright/copyright.component');
 
+require('angular1-async-filter');
+
 angular
   .module('phoneApp', [
-    'ngRoute'
+    'ngRoute', 'asyncFilter'
   ])
 
   .service('phoneRepository', PhoneRepositoryService.create())
