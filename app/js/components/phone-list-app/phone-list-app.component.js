@@ -4,12 +4,18 @@
 class PhoneListApp {
 
   constructor(filteredPhoneList) {
-    this.phones = filteredPhoneList;
+    this.filteredPhoneList = filteredPhoneList;
+
+    this.phones = [];
+    filteredPhoneList.phones$.subscribe((phones) => this.phones = phones);
+
+    this.hasAnyPhones = 0;
+    filteredPhoneList.hasAny$.subscribe((hasAny) => this.hasAnyPhones = hasAny);
   }
 
 
   $onInit() {
-    this.phones.load();
+    this.filteredPhoneList.load();
   }
 
 

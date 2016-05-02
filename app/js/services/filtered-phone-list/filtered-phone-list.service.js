@@ -1,5 +1,7 @@
 'use strict';
 
+const Rx = require('rxjs/Rx');
+
 
 class FilteredPhoneList {
 
@@ -7,44 +9,42 @@ class FilteredPhoneList {
     this._filter = $filter('filter');
     this._phoneRepository = phoneRepository;
 
-    this._allPhones = [];
-    this._phones = [];
-    this._searchText = '';
-    this._selectedCarrier = '';
+    this._phones = new Rx.ReplaySubject(1);
+    this._searchText = new Rx.BehaviorSubject('');
+    this._selectedCarrier = new Rx.BehaviorSubject('');
   }
 
 
+  get phones$() {
+    return Rx.Observable.combineLatest(this._phones, this._searchText, this._selectedCarrier)
+      .map(([phones, searchText, selectedCarrier]) => this._filterPhones(phones, searchText, selectedCarrier));
+  }
+
+
+  get hasAny$() {
+    return this.phones$.map((phones) => phones.length > 0);
+  }
+  
+  
   load() {
     this._phoneRepository
       .getAll()
-      .then((phones) => this._phones = this._allPhones = phones);
-  }
-
-
-  getAll() {
-    return this._phones;
-  }
-
-
-  hasAny() {
-    return this._phones.length > 0;
+      .then((phones) => this._phones.next(phones));
   }
 
 
   setSelectedCarrier(carrier) {
-    this._selectedCarrier = carrier;
-    this._filterPhones();
+    this._selectedCarrier.next(carrier);
   }
 
 
   setSearchText(value) {
-    this._searchText = value;
-    this._filterPhones();
+    this._searchText.next(value);
   }
 
 
-  _filterPhones() {
-    this._phones = this._filter(this._allPhones, { name: this._searchText, carrier: this._selectedCarrier });
+  _filterPhones(phones, searchText, selectedCarrier) {
+    return this._filter(phones, { name: searchText, carrier: selectedCarrier });
   }
 
 
