@@ -13,7 +13,7 @@ import { PhoneAppComponent } from './components/phone-app/phone-app.component';
 import { PhoneListAppComponent } from './components/phone-list-app/phone-list-app.component';
 import { BootstrapSelectComponent } from './components/bootstrap-select/bootstrap-select.component';
 import { CarrierSelectComponent } from './components/carrier-select/carrier-select.component';
-import { SearchComponent } from './components/search/search.component';
+import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { PhoneListItemComponent } from './components/phone-list-item/phone-list-item.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 
@@ -33,7 +33,7 @@ angular
   .component('phoneListApp', PhoneListAppComponent.create())
   .component('bootstrapSelect', BootstrapSelectComponent.create())
   .component('carrierSelect', CarrierSelectComponent.create())
-  .component('search', SearchComponent.create())
+  .component('searchBox', SearchBoxComponent.create())
   .component('phoneListItem', PhoneListItemComponent.create())
   .component('copyright', CopyrightComponent.create())
 
