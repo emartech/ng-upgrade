@@ -3,6 +3,7 @@
 import { PhoneRepositoryService } from './services/phone-repository/phone-repository.service';
 import { CarrierRepositoryService } from './services/carrier-repository/carrier-repository.service';
 
+import { PhoneListItemComponent } from './components/phone-list-item/phone-list-item.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 
 angular
@@ -15,6 +16,7 @@ angular
   .service('phoneRepository', PhoneRepositoryService.create())
   .service('carrierRepository', CarrierRepositoryService.create())
 
+  .component('phoneListItem', PhoneListItemComponent.create())
   .component('copyright', CopyrightComponent.create())
 
   .config(['$routeProvider', function($routeProvider) {
