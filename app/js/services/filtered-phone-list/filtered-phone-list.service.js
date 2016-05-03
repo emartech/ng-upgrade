@@ -1,7 +1,7 @@
 'use strict';
 
 
-class FilteredPhoneList {
+export class FilteredPhoneListService {
 
   constructor($filter, phoneRepository) {
     this._filter = $filter('filter');
@@ -49,10 +49,7 @@ class FilteredPhoneList {
 
 
   static create() {
-    return ['$filter', 'phoneRepository', FilteredPhoneList];
+    return ['$filter', 'phoneRepository', FilteredPhoneListService];
   }
 
 }
-
-
-module.exports = FilteredPhoneList;

@@ -1,7 +1,7 @@
 'use strict';
 
 
-class PhoneRepository {
+export class PhoneRepositoryService {
 
   constructor($http) {
     this._$http = $http;
@@ -23,10 +23,7 @@ class PhoneRepository {
 
 
   static create() {
-    return ['$http', PhoneRepository];
+    return ['$http', PhoneRepositoryService];
   }
 
 }
-
-
-module.exports = PhoneRepository;

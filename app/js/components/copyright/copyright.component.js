@@ -1,7 +1,7 @@
 'use strict';
 
 
-class Copyright {
+export class CopyrightComponent {
 
   constructor(ACTUAL_YEAR) {
     this.actualYear = ACTUAL_YEAR;
@@ -9,13 +9,9 @@ class Copyright {
 
   static create() {
     return {
-      controller: ['ACTUAL_YEAR', Copyright],
+      controller: ['ACTUAL_YEAR', CopyrightComponent],
       template: require('./copyright.tpl.html')
     };
   }
 
-
 }
-
-
-module.exports = Copyright;

@@ -2,8 +2,7 @@
 
 const MAX_LENGTH = 100;
 
-class ShortDescription {
-
+export class ShortDescriptionFilter {
 
   transform(input, length) {
     length = this._calculateLength(length);
@@ -33,10 +32,9 @@ class ShortDescription {
 
   static create() {
     return () => {
-      const shortDescription = new ShortDescription();
+      const shortDescription = new ShortDescriptionFilter();
       return shortDescription.transform.bind(shortDescription);
     };
   }
+  
 }
-
-module.exports = ShortDescription;

@@ -1,22 +1,26 @@
 'use strict';
 
-const PhoneRepositoryService = require('./services/phone-repository/phone-repository.service');
-const CarrierRepositoryService = require('./services/carrier-repository/carrier-repository.service');
-const FilteredPhoneListService = require('./services/filtered-phone-list/filtered-phone-list.service');
+import angular from 'angular';
+import ngRoute from 'angular-route';
 
-const ShortDescriptionFilter = require('./filters/short-description/short-description.filter');
+import { PhoneRepositoryService } from './services/phone-repository/phone-repository.service';
+import { CarrierRepositoryService } from './services/carrier-repository/carrier-repository.service';
+import { FilteredPhoneListService } from './services/filtered-phone-list/filtered-phone-list.service';
 
-const PhoneAppComponent = require('./components/phone-app/phone-app.component');
-const PhoneListAppComponent = require('./components/phone-list-app/phone-list-app.component');
-const BootstrapSelectComponent = require('./components/bootstrap-select/bootstrap-select.component');
-const CarrierSelectComponent = require('./components/carrier-select/carrier-select.component');
-const SearchComponent = require('./components/search/search.component');
-const PhoneListItemComponent = require('./components/phone-list-item/phone-list-item.component');
-const CopyrightComponent = require('./components/copyright/copyright.component');
+import { ShortDescriptionFilter } from './filters/short-description/short-description.filter';
+
+import { PhoneAppComponent } from './components/phone-app/phone-app.component';
+import { PhoneListAppComponent } from './components/phone-list-app/phone-list-app.component';
+import { BootstrapSelectComponent } from './components/bootstrap-select/bootstrap-select.component';
+import { CarrierSelectComponent } from './components/carrier-select/carrier-select.component';
+import { SearchComponent } from './components/search/search.component';
+import { PhoneListItemComponent } from './components/phone-list-item/phone-list-item.component';
+import { CopyrightComponent } from './components/copyright/copyright.component';
+
 
 angular
   .module('phoneApp', [
-    'ngRoute'
+    ngRoute
   ])
 
   .constant('ACTUAL_YEAR', 2016)

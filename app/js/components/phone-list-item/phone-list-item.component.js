@@ -1,20 +1,17 @@
 'use strict';
 
 
-class PhoneListItem {
+export class PhoneListItemComponent {
 
   static create() {
     return {
       bindings: {
         phone: '<'
       },
-      controller: [PhoneListItem],
+      controller: [PhoneListItemComponent],
       template: require('./phone-list-item.tpl.html')
     };
   }
 
 
 }
-
-
-module.exports = PhoneListItem;

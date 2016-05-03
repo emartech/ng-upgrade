@@ -1,7 +1,7 @@
 'use strict';
 
 
-class Search {
+export class SearchComponent {
 
   change($event) {
     this.onChange({ value: $event.target.value });
@@ -13,13 +13,9 @@ class Search {
       bindings: {
         onChange: '&'
       },
-      controller: [Search],
+      controller: [SearchComponent],
       template: require('./search.tpl.html')
     };
   }
-
-
+  
 }
-
-
-module.exports = Search;

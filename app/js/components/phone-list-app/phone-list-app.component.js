@@ -1,7 +1,7 @@
 'use strict';
 
 
-class PhoneListApp {
+export class PhoneListAppComponent {
 
   constructor(filteredPhoneList) {
     this.phones = filteredPhoneList;
@@ -15,13 +15,9 @@ class PhoneListApp {
 
   static create() {
     return {
-      controller: ['filteredPhoneList', PhoneListApp],
+      controller: ['filteredPhoneList', PhoneListAppComponent],
       template: require('./phone-list-app.tpl.html')
     };
   }
-
-
+  
 }
-
-
-module.exports = PhoneListApp;

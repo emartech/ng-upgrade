@@ -1,7 +1,7 @@
 'use strict';
 
 
-class PhoneApp {
+export class PhoneAppComponent {
 
   constructor($routeParams, phoneRepository) {
     this.phone = {};
@@ -20,13 +20,9 @@ class PhoneApp {
 
   static create() {
     return {
-      controller: ['$routeParams', 'phoneRepository', PhoneApp],
+      controller: ['$routeParams', 'phoneRepository', PhoneAppComponent],
       template: require('./phone-app.tpl.html')
     };
   }
-
-
+  
 }
-
-
-module.exports = PhoneApp;

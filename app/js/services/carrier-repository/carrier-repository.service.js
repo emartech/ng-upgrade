@@ -1,7 +1,7 @@
 'use strict';
 
 
-class CarrierRepository {
+export class CarrierRepositoryService {
 
   constructor($http) {
     this._$http = $http;
@@ -16,10 +16,7 @@ class CarrierRepository {
 
 
   static create() {
-    return ['$http', CarrierRepository];
+    return ['$http', CarrierRepositoryService];
   }
 
 }
-
-
-module.exports = CarrierRepository;

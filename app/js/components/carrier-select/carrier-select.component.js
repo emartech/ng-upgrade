@@ -1,7 +1,7 @@
 'use strict';
 
 
-class CarrierSelect {
+export class CarrierSelectComponent {
 
   constructor(carrierRepository) {
     this._carrierRepository = carrierRepository;
@@ -26,13 +26,9 @@ class CarrierSelect {
       bindings: {
         onSelect: '&'
       },
-      controller: ['carrierRepository', CarrierSelect],
+      controller: ['carrierRepository', CarrierSelectComponent],
       template: require('./carrier-select.tpl.html')
     };
   }
 
-
 }
-
-
-module.exports = CarrierSelect;

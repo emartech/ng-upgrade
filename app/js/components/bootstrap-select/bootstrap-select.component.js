@@ -1,7 +1,7 @@
 'use strict';
 
 
-class BootstrapSelect {
+export class BootstrapSelectComponent {
 
   constructor() {
     this.selectedOption = '';
@@ -33,13 +33,9 @@ class BootstrapSelect {
         onSelect: '&',
         placeholder: '@'
       },
-      controller: [BootstrapSelect],
+      controller: [BootstrapSelectComponent],
       template: require('./bootstrap-select.tpl.html')
     };
   }
-
-
+  
 }
-
-
-module.exports = BootstrapSelect;
