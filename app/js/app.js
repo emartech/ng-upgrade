@@ -6,6 +6,7 @@ import { CarrierRepositoryService } from './services/carrier-repository/carrier-
 
 import { ShortDescriptionFilter } from './filters/short-description/short-description.filter';
 
+import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { PhoneListItemComponent } from './components/phone-list-item/phone-list-item.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 
@@ -19,6 +20,7 @@ angular
   .service('phoneRepository', PhoneRepositoryService.create())
   .service('carrierRepository', CarrierRepositoryService.create())
 
+  .component('searchBox', SearchBoxComponent.create())
   .component('phoneListItem', PhoneListItemComponent.create())
   .component('copyright', CopyrightComponent.create())
   
@@ -43,4 +45,3 @@ angular
 require('./phone-list.ctrl.js');
 require('./phone.ctrl.js');
 require('./carrier-select.directive.js');
-require('./search-box.directive.js');
