@@ -19,6 +19,8 @@ angular
     'ngRoute'
   ])
 
+  .constant('ACTUAL_YEAR', 2016)
+
   .service('phoneRepository', PhoneRepositoryService.create())
   .service('carrierRepository', CarrierRepositoryService.create())
   .service('filteredPhoneList', FilteredPhoneListService.create())
