@@ -8,16 +8,17 @@ angular
     $scope.allPhones = [];
     $scope.phones = [];
 
-    $rootScope.$on('carrier-selected', function($event, carrier) {
-      $scope.selectedCarrier = carrier;
-    });
-
     function getFilteredPhones() {
       return $filter('filter')($scope.allPhones, { name: $scope.searchText, carrier: $scope.selectedCarrier });
     }
 
     $scope.setSearchText = (value) => {
       $scope.searchText = value;
+      $scope.phones = getFilteredPhones();
+    };
+
+    $scope.setSelectedCarrier = (value) => {
+      $scope.selectedCarrier = value;
       $scope.phones = getFilteredPhones();
     };
 
