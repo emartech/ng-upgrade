@@ -22,10 +22,6 @@ angular
       $scope.phones = getFilteredPhones();
     };
 
-    $scope.$watch('selectedCarrier', function() {
-      $scope.phones = getFilteredPhones();
-    });
-
     phoneRepository
       .getAll()
       .then((phones) => $scope.phones = $scope.allPhones = phones);
