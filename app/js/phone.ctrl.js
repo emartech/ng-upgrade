@@ -7,7 +7,7 @@ angular
 
     $scope.phone = {};
 
-    $http.get('/api/' + $routeParams.fileId + '.json')
+    $http.get('/api/' + $routeParams.phoneId + '.json')
       .then(function(response) {
         $scope.phone = response.data;
       });
