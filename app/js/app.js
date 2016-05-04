@@ -21,7 +21,7 @@ angular
 
   .component('phoneListItem', PhoneListItemComponent.create())
   .component('copyright', CopyrightComponent.create())
-  
+
   .filter('shortDescription', ShortDescriptionFilter.create())
 
   .config(['$routeProvider', function($routeProvider) {
@@ -30,7 +30,7 @@ angular
         templateUrl: 'js/phone-list.tpl.html',
         controller: 'PhoneListController'
       })
-      .when('/phone/:fileId', {
+      .when('/phone/:phoneId', {
         templateUrl: 'js/phone.tpl.html',
         controller: 'PhoneController'
       })
