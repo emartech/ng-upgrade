@@ -34,7 +34,7 @@ angular
         templateUrl: 'js/phone-list.tpl.html',
         controller: 'PhoneListController'
       })
-      .when('/phone/:fileId', {
+      .when('/phone/:phoneId', {
         templateUrl: 'js/phone.tpl.html',
         controller: 'PhoneController'
       })
