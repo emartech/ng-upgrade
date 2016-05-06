@@ -1,10 +1,13 @@
-'use strict';
+import { Injectable } from '@angular/core';
 
+import { PhoneRepositoryService } from '../phone-repository/phone-repository.service';
 
 export class FilteredPhoneListService {
 
-  constructor($filter, phoneRepository) {
-    this._filter = $filter('filter');
+  constructor(phoneRepository: PhoneRepositoryService) {
+    this._filter = function(input) {
+      return input;
+    };
     this._phoneRepository = phoneRepository;
 
     this._allPhones = [];
@@ -46,10 +49,4 @@ export class FilteredPhoneListService {
   _filterPhones() {
     this._phones = this._filter(this._allPhones, { name: this._searchText, carrier: this._selectedCarrier });
   }
-
-
-  static create() {
-    return ['$filter', 'phoneRepository', FilteredPhoneListService];
-  }
-
 }

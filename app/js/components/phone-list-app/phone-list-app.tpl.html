@@ -3,10 +3,10 @@
         <h1 class="page-header">Phones</h1>
     </div>
 
-    <list-item *ngFor="let phone of phones"></list-item>
+    <list-item *ngFor="let phone of phones.getAll()"></list-item>
 
     <div class="row">
-        <div class="col-md-3 text-center" *ngFor="let phone of phones">
+        <div class="col-md-3 text-center" *ngFor="let phone of phones.getAll()">
             <div class="thumbnail">
                 <a class="thumbnail-image" [href]="'#/phone/' + phone.id">
                     <img class="img-responsive" [src]="phone.imageUrl" alt="">
