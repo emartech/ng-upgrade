@@ -3,15 +3,15 @@
 
 export class SearchBoxComponent {
 
-  change($event) {
-    this.onChange({ value: $event.target.value });
+  handleKeyUp($event) {
+    this.onInputChange({ value: $event.target.value });
   }
 
 
   static create() {
     return {
       bindings: {
-        onChange: '&'
+        onInputChange: '&'
       },
       controller: [SearchBoxComponent],
       template: require('./search-box.tpl.html')
