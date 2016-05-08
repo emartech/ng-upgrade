@@ -3,11 +3,12 @@ import { Component } from '@angular/core';
 import template from './phone-list-app.tpl.html';
 import { FilteredPhoneListService } from '../../services/filtered-phone-list/filtered-phone-list.service';
 import { PhoneListItemComponent } from '../phone-list-item/phone-list-item.component';
+import { CopyrightComponent } from '../copyright/copyright.component';
 
 @Component({
   selector: 'phone-list-app',
   template: template,
-  directives: [PhoneListItemComponent]
+  directives: [PhoneListItemComponent, CopyrightComponent]
 })
 export class PhoneListAppComponent {
 

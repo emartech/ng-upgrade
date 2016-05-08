@@ -15,10 +15,12 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import { AppComponent } from './components/app/app.component';
 import { PhoneRepositoryService } from './services/phone-repository/phone-repository.service';
 import { FilteredPhoneListService } from './services/filtered-phone-list/filtered-phone-list.service';
+import { ACTUAL_YEAR } from './actual-year.token';
 
 bootstrap(AppComponent, [
   ROUTER_PROVIDERS,
   HTTP_PROVIDERS,
   PhoneRepositoryService, FilteredPhoneListService,
-  provide(LocationStrategy, { useClass: HashLocationStrategy })
+  provide(LocationStrategy, { useClass: HashLocationStrategy }),
+  provide(ACTUAL_YEAR, { useValue: 2016 })
 ]);
