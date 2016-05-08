@@ -1,28 +1,30 @@
-'use strict';
+import { Component } from '@angular/core';
+import { RouteParams, Router } from '@angular/router-deprecated';
 
+import { PhoneRepositoryService } from '../../services/phone-repository/phone-repository.service';
+import template from './phone-app.tpl.html';
 
+@Component({
+  selector: 'phone-app',
+  template: template
+})
 export class PhoneAppComponent {
 
-  constructor($routeParams, phoneRepository) {
-    this.phone = {};
+  constructor(routeParams: RouteParams, phoneRepository: PhoneRepositoryService) {
+    this.phone = {
+      images: [],
+      battery: {},
+      storage: {},
+      hardware: {}
+    };
 
-    this._phoneId = $routeParams.phoneId;
+    this._phoneId = routeParams.get('phoneId');
     this._phoneRepository = phoneRepository;
   }
 
-
-  $onInit() {
+  ngOnInit() {
     this._phoneRepository
       .getOne(this._phoneId)
       .then((phone) => this.phone = phone);
   }
-
-
-  static create() {
-    return {
-      controller: ['$routeParams', 'phoneRepository', PhoneAppComponent],
-      template: require('./phone-app.tpl.html')
-    };
-  }
-
 }
