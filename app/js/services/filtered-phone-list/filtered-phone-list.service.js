@@ -5,8 +5,10 @@ import { PhoneRepositoryService } from '../phone-repository/phone-repository.ser
 export class FilteredPhoneListService {
 
   constructor(phoneRepository: PhoneRepositoryService) {
-    this._filter = function(input) {
-      return input;
+    this._filter = function(phones, criteria) {
+      return phones.filter((phone) => {
+        return !criteria.name || phone.name.toLowerCase().indexOf(criteria.name.toLowerCase()) !== -1;
+      });
     };
     this._phoneRepository = phoneRepository;
 
