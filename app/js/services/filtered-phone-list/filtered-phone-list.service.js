@@ -7,7 +7,8 @@ export class FilteredPhoneListService {
   constructor(phoneRepository: PhoneRepositoryService) {
     this._filter = function(phones, criteria) {
       return phones.filter((phone) => {
-        return !criteria.name || phone.name.toLowerCase().indexOf(criteria.name.toLowerCase()) !== -1;
+        return (!criteria.name || phone.name.toLowerCase().indexOf(criteria.name.toLowerCase()) !== -1)
+          && (!criteria.carrier || phone.carrier.toLowerCase() == criteria.carrier.toLowerCase());
       });
     };
     this._phoneRepository = phoneRepository;

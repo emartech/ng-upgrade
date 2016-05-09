@@ -6,7 +6,7 @@
     <div class="row" style="margin-bottom: 20px">
         <div class="col-lg-12 form-inline">
             <search-box (onInputChange)="phones.setSearchText($event)"></search-box>
-            <!--<carrier-select></carrier-select>-->
+            <carrier-select (onSelect)="phones.setSelectedCarrier($event)"></carrier-select>
         </div>
     </div>
 
